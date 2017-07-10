@@ -1,15 +1,15 @@
 import sun.rmi.runtime.Log;
 
-public class LinkedList{
+class LinkedList{
 
     private Node head;
     private int listCount;
 
-    public LinkedList() {
+    LinkedList() {
         this.listCount = 0;
     }
 
-    public void add(int value){
+    void add(int value){
         Node end = new Node(value);
         if (head == null){
             head = end;
@@ -25,12 +25,12 @@ public class LinkedList{
         }
     }
 
-    public void show(){
-        Node current = head;
-        if (current == null){
+    void show(){
+        if (head == null){
             System.out.println("List is empty");
         }
         else {
+            Node current = head;
             System.out.print("[");
             while (current.next != null){
                 System.out.print(current.value);
@@ -41,13 +41,41 @@ public class LinkedList{
         }
     }
 
-    public class Node {
-        int value;
-        Node next;
+    void deleteByValue(int value){
+        if (head == null){
+            System.out.println("Cannot perform operation: list is empty");
+        }
 
-        public Node(int value) {
-            this.value = value;
-            this.next = null;
+        else if (head.value == value){
+            head = head.next;
+        }
+        else {
+            Node current = head;
+            while (current.next != null){
+                if (current.next.value == value){
+                    current.next = current.next.next;
+                }
+                current = current.next;
+            }
+        }
+    }
+
+    void deleteByIndex(int index){
+        if (head == null || index > listCount-1){
+            System.out.println("Cannot perform operation: list is empty or wrong index value");
+        }
+        else if (index == 0) {
+            head = head.next;
+        }
+        else {
+            Node current = head;
+            for (int i = 0; i != index; i++){
+                current = current.next;
+            }
+            System.out.println(current.value);
+            current = current.next;
+
+            //current = current.next;
         }
     }
 }
