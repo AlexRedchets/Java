@@ -48,17 +48,23 @@ class LinkedList <T>{
 
         else if (head.value == value){
             head = head.next;
+            listCount --;
         }
         else {
             Node current = head;
             while (current.next != null){
                 if (current.next.value == value){
-                    current.next = current.next.next;
+                    if (current.next.next != null){
+                        current.next = current.next.next;
+                    }
+                    else {
+                        current.next = null;
+                    }
+                    listCount --;
                 }
                 current = current.next;
             }
         }
-        listCount --;
     }
 
     void deleteByIndex(int index){
