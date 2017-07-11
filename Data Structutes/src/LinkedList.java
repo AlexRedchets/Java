@@ -69,13 +69,14 @@ class LinkedList{
         }
         else {
             Node current = head;
-            for (int i = 0; i != index; i++){
+            Node previousItem = head;
+            int i = 0;
+            while (i < index){
+                i++;
+                previousItem = current;
                 current = current.next;
             }
-            System.out.println(current.value);
-            current = current.next;
-
-            //current = current.next;
+            previousItem.next = current.next;
         }
     }
 }
