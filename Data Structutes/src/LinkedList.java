@@ -1,6 +1,6 @@
 import sun.rmi.runtime.Log;
 
-class LinkedList{
+class LinkedList <T>{
 
     private Node head;
     private int listCount;
@@ -9,7 +9,7 @@ class LinkedList{
         this.listCount = 0;
     }
 
-    void add(int value){
+    void add(T value){
         Node end = new Node(value);
         if (head == null){
             head = end;
@@ -41,7 +41,7 @@ class LinkedList{
         }
     }
 
-    void deleteByValue(int value){
+    void deleteByValue(T value){
         if (head == null){
             System.out.println("Cannot perform operation: list is empty");
         }
@@ -58,6 +58,7 @@ class LinkedList{
                 current = current.next;
             }
         }
+        listCount --;
     }
 
     void deleteByIndex(int index){
@@ -78,5 +79,10 @@ class LinkedList{
             }
             previousItem.next = current.next;
         }
+        listCount --;
+    }
+
+    int size(){
+        return listCount;
     }
 }
