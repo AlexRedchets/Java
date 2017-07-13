@@ -22,6 +22,37 @@ public class Stack<T> {
         listCount ++;
     }
 
+    Object pop(){
+        if (head == null){
+            System.out.println("Stack is empty");
+        }
+        else {
+            Node current = head;
+            head = head.next;
+            listCount --;
+            return current.value;
+        }
+        return 0;
+    }
+
+    Object peek(){
+        if (head == null){
+            System.out.println("Stack is empty");
+        }
+        else {
+            Node current = head;
+            while (current.next != null){
+                current = current.next;
+            }
+            return current.value;
+        }
+        return 0;
+    }
+
+    int size(){
+        return listCount;
+    }
+
     void show(){
         if (listCount == 0){
             System.out.println("Stack is empty");
