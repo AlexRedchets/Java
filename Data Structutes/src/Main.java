@@ -10,10 +10,12 @@ public class Main {
         queue.enqueue("j");
         queue.enqueue("p");
         queue.show();
+        System.out.println("Size is " + queue.size());
         System.out.println(queue.dequeue());
         queue.show();
         System.out.println(queue.dequeue());
         queue.show();
+        System.out.println("Size is " + queue.size());
     }
 }
 

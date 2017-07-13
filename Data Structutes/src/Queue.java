@@ -10,6 +10,7 @@ public class Queue<T> {
     public void enqueue(T value){
         Node newNode = new Node(value);
         if (head == null){
+            listCount ++;
             head = newNode;
         }
         else {
@@ -30,8 +31,13 @@ public class Queue<T> {
         else{
             Object current = head.value;
             head = head.next;
+            listCount --;
             return current;
         }
+    }
+
+    public int size(){
+        return listCount;
     }
 
     public void show(){
