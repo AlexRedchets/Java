@@ -1,28 +1,12 @@
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList<String> linkedList = new LinkedList<String>();
-        linkedList.show();
-        linkedList.add("a");
-        linkedList.add("f");
-        linkedList.add("r");
-        linkedList.add("y");
-        linkedList.show();
-        System.out.println(linkedList.size());
-        //linkedList.show();
-        //linkedList.deleteByValue(9);
-        //linkedList.deleteByValue(5);
-        //linkedList.show();
-        linkedList.add("p");
-        linkedList.add("q");
-        linkedList.add("y");
-        linkedList.show();
-        System.out.println(linkedList.size());
-        linkedList.deleteByValue("y");
-        linkedList.show();
-        System.out.println(linkedList.size());
-        //linkedList.deleteByIndex(2);
-        /*System.out.println("Hello World!");*/
+        Stack<String> stack = new Stack<>();
+        stack.push("d");
+        stack.push("g");
+        stack.push("r");
+        stack.push("b");
+        stack.show();
     }
 }
 
