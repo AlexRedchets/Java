@@ -1,21 +1,21 @@
 public class Main {
 
     public static void main(String[] args) {
-        Queue<String> queue = new Queue<>();
-        queue.show();
-        queue.enqueue("d");
-        queue.enqueue("g");
-        queue.enqueue("h");
-        queue.enqueue("g");
-        queue.enqueue("j");
-        queue.enqueue("p");
-        queue.show();
-        System.out.println("Size is " + queue.size());
-        System.out.println(queue.dequeue());
-        queue.show();
-        System.out.println(queue.dequeue());
-        queue.show();
-        System.out.println("Size is " + queue.size());
+        Set<Integer> set = new Set<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        set.add(4);
+        set.add(5);
+        set.show();
+        System.out.println(set.size());
+        set.add(5);
+        set.add(1);
+        set.add(5);
+        set.add(3);
+        set.add(5);
+        set.show();
+        System.out.println(set.size());
     }
 }
 
