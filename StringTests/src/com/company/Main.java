@@ -8,7 +8,18 @@ public class Main {
     public static void main(String[] args) {
         String str = "heleh";
         //System.out.println(isPalendrom(str));
-        System.out.println(isBalanced("s{}dgsg"));
+        System.out.print(isBalanced("s{([])}dgsg"));
+        //System.out.print(sqrt(9));
+    }
+
+    public static double sqrt(double num){
+        double t;
+        double squareRoot = num/2;
+        do {
+            t = squareRoot;
+            squareRoot = (t + (num/t))/2;
+        } while ((t-squareRoot) != 0);
+        return squareRoot;
     }
 
     public static String reverseString(String str){
@@ -26,31 +37,31 @@ public class Main {
     }
 
     public static boolean isBalanced(String str){
-        char[] arr = str.toCharArray();
-        System.out.println(arr[2]);
-        Stack<Character> stack = new Stack<>();
-        for (char anArr : arr) {
-            switch (anArr){
-                case '(':
-                case '[':
-                case '{':
-                    System.out.println("Got it");
+        String[] arr = str.split("");
+        Stack<String> stack = new Stack<>();
+        for (String anArr : arr) {
+            switch (anArr) {
+                case "{":
+                case "(":
+                case "[":
                     stack.push(anArr);
-                case ')':
-                    if (stack.empty() || stack.pop() != ')'){
+                    break;
+                case "}":
+                    if (stack.empty() || !(stack.pop()).equals("{")){
                         return false;
                     }
-                case ']':
-                    if (stack.empty() || stack.pop() != ']'){
+                    break;
+                case ")":
+                    if (stack.empty() || !(stack.pop()).equals("(")){
                         return false;
                     }
-                case '}':
-                    if (stack.empty() || stack.pop() != '}'){
+                    break;
+                case "]":
+                    if (stack.empty() || !(stack.pop()).equals("[")){
                         return false;
                     }
-                    System.out.println("Got it");
+                    break;
             }
-            return !stack.empty();
         }
         return true;
     }
