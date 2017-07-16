@@ -8,18 +8,18 @@ public class Main {
     public static void main(String[] args) {
         String str = "heleh";
         //System.out.println(isPalendrom(str));
-        System.out.print(isBalanced("s{([])}dgsg"));
-        //System.out.print(sqrt(9));
+        //System.out.print(isBalanced("s{([])}dgsg"));
+        System.out.print(sqrt(45));
     }
 
     public static double sqrt(double num){
-        double t;
-        double squareRoot = num/2;
+        double i;
+        double sqrt = num*0.5;
         do {
-            t = squareRoot;
-            squareRoot = (t + (num/t))/2;
-        } while ((t-squareRoot) != 0);
-        return squareRoot;
+            i = sqrt;
+            sqrt = (i + (num/i))*0.5;
+        } while ((i - sqrt) != 0);
+        return sqrt;
     }
 
     public static String reverseString(String str){
