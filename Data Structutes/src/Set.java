@@ -12,21 +12,29 @@ public class Set<T> {
         setCount = collection.length;
     }
 
-    public boolean contains(T item){
-        if (item == null){
-            for (int i = 0; i < setCount; i++){
-                if (collection[i] == null){
-                    return true;
-                }
+    public void add(T item){
+        if (!contains(item)){
+            if (setCount == collection.length){
+                incrementArray();
             }
+            collection[setCount++] = item;
         }
-        else {
-            for (T anArr : collection){
-                if (anArr == item){
-                    return true;
-                }
+    }
+
+    public boolean contains(T item){
+        for (T anArr : collection){
+            if (anArr == item){
+                return true;
             }
         }
         return false;
+    }
+
+
+    public void incrementArray(){
+        T[] tempArray = collection;
+        int newSize = setCount + 5;
+        collection = (T[]) new Object[newSize];
+        System.arraycopy(tempArray, 0, collection, 0, setCount);
     }
 }
